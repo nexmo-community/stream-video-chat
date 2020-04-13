@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stream Video Chat</title>
+    <meta
+      name="description"
+      content="Stream a basic audio-video chat plus texting with Vonage Video API in Node.js"
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://tokbox.com/developer/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Stream your Video Chat</h1>
+    </header>
+
+    <main>
+      <form id="registration" class="registration">
+        <label>
+          <span>Room</span>
+          <input
+            type="text"
+            name="room-name"
+            placeholder="Enter room name"
+            required
+          />
+        </label>
+
+        <p>Select your role:</p>
+        <fieldset id="userRoles">
+          <label>
+            <input type="radio" name="user-type" value="viewer" checked />
+            <span>Viewer</span>
+          </label>
+
+          <label>
+            <input type="radio" name="user-type" value="participant" />
+            <span>Participant</span>
+          </label>
+        </fieldset>
+
+        <label id="userName" class="hidden">
+          <span>User name</span>
+          <input type="text" name="user-name" placeholder="Enter your name" />
+        </label>
+
+        <button>Enter</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>
+        <small
+          >Built on <a href="https://glitch.com">Glitch</a> with the
+          <a href="https://tokbox.com/developer/">Vonage Video API</a>.</small
+        >
+      </p>
+    </footer>
+
+    <script>
+      const form = document.getElementById("registration");
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        const isViewer = form.elements["user-type"].value === "viewer";
+
+        if (isViewer) {
+          location.href = `/session/viewer/${form.elements["room-name"].value}`;
+        } else {
+          location.href = `/session/participant/${form.elements["room-name"].value}?username=${form.elements["user-name"].value}`;
+        }
+      });
+
+      const userRoles = document.getElementById("userRoles");
+      const userName = document.getElementById("userName");
+      const userNameField = document.querySelector('[name="user-name"]');
+      userRoles.addEventListener(
+        "click",
+        event => {
+          if (event.target.value === "participant") {
+            userName.classList.remove("hidden");
+            userNameField.required = true;
+          } else {
+            userName.classList.add("hidden");
+            userNameField.required = false;
+          }
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

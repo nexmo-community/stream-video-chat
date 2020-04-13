@@ -1,0 +1,82 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 0.5em;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+fieldset {
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+fieldset label {
+  padding: 0.25em 0em;
+  cursor: pointer;
+}
+
+input,
+button {
+  font-size: inherit;
+  padding: 0.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.registration input[type="text"] {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.subscriber {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.publisher {
+  position: absolute;
+  width: 25vmin;
+  height: 25vmin;
+  min-width: 8em;
+  min-height: 8em;
+  align-self: flex-end;
+}
+
+footer {
+  text-align: center;
+  padding: 0.5em;
+}
