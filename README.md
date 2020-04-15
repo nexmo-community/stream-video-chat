@@ -21,4 +21,4 @@ In the interest of fostering an open and welcoming environment, we strive to mak
 This project is subject to the [MIT License][license]
 
 [coc]: CODE_OF_CONDUCT.md "Code of Conduct"
-[license]: LICENSE.md "MIT License"
+[license]: LICENSE "MIT License"
