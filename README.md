@@ -8,6 +8,6 @@ We will not be using any front-end frameworks for this series, just vanilla Java
 
 ## Running on your local machine
 
-1. `git clone https://github.com/nexmo-community/video-with-text-chat.git`
+1. `git clone https://github.com/nexmo-community/stream-video-chat.git`
 2. `npm install`
 3. `node server.js`
