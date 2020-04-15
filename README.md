@@ -11,3 +11,14 @@ We will not be using any front-end frameworks for this series, just vanilla Java
 1. `git clone https://github.com/nexmo-community/stream-video-chat.git`
 2. `npm install`
 3. `node server.js`
+
+## Code of Conduct
+
+In the interest of fostering an open and welcoming environment, we strive to make participation in our project and our community a harassment-free experience for everyone. Please check out our [Code of Conduct][coc] in full.
+
+## License
+
+This project is subject to the [MIT License][license]
+
+[coc]: CODE_OF_CONDUCT.md "Code of Conduct"
+[license]: LICENSE "MIT License"
